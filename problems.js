@@ -479,25 +479,25 @@ Notes:
 
 // function renderInventory(inventory) {
 
-// // loop through the array for each element in the array inventory
-//     let string = '';
-//     for (let i=0; i<inventory.length; i++){
-// //access the shoe property of each element
-//     let designer = inventory[i]['name'];
-// // loop through each element of that shoe property, get the name of the designer
+ // loop through the array for each element in the array inventory
+     let string = '';
+     for (let i=0; i<inventory.length; i++){
+ //access the shoe property of each element
+     let designer = inventory[i]['name'];
+ // loop through each element of that shoe property, get the name of the designer
    
-//         for(let k=0; k<inventory[i]['shoes'].length; k++){
-//         //access the shoe property of each element
-//         // loop through each element of that shoe property, get the name of the designer
-//         //the line and the price, add that into a string, and console log it
-//         let shoeName = inventory[i]['shoes'][k]['name'];
-//         let shoePrice = inventory[i]['shoes'][k]['price'];
-//         string += `${designer}, ${shoeName}, ${shoePrice}\n`;
-//     }
-// //the line and the price, add that into a string, and console log it
+         for(let k=0; k<inventory[i]['shoes'].length; k++){
+         //access the shoe property of each element
+         // loop through each element of that shoe property, get the name of the designer
+         //the line and the price, add that into a string, and console log it
+         let shoeName = inventory[i]['shoes'][k]['name'];
+         let shoePrice = inventory[i]['shoes'][k]['price'];
+         string += `${designer}, ${shoeName}, ${shoePrice}\n`;
+     }
+ //the line and the price, add that into a string, and console log it
 
-//     }
-//     return string;
+     }
+     return string;
 
 
 // }
@@ -939,20 +939,22 @@ function select(array, callback){
 //   return filtered;
 // }
 
-function commonElements(array1,array2){
-  let result = array1.reduce( (acc, curr) => {
-    array2.map( e => {
-      if (e === curr){
-        acc[e] = 0;
-      }
-    })
-    return acc;
-  }, {})
-  return Object.keys(result);
-}
+//function commonElements(array1,array2){
+//  let result = array1.reduce( (acc, curr) => {
+//    array2.map( e => {
+//      if (e === curr){
+//        acc[e] = 0;
+//      }
+//    })
+//    return acc;
+//  }, {})
+//  return Object.keys(result);
+//}
+//
+//var array1 = [1,4,6,7,'ferret',12,12,99,2000,'dog','dog',99,1000];
+//var array2  = [15,9,9,'ferret',9,26,12,12,'dog'];
+//commonElements(array1, array2) //-> [ 12, 'ferret', 'dog']
+//// this is O(n2) since there are 2 iterations, it will be proportional to the square of the input array
+//
 
-var array1 = [1,4,6,7,'ferret',12,12,99,2000,'dog','dog',99,1000];
-var array2  = [15,9,9,'ferret',9,26,12,12,'dog'];
-commonElements(array1, array2) //-> [ 12, 'ferret', 'dog']
-// this is O(n2) since there are 2 iterations, it will be proportional to the square of the input array
 
