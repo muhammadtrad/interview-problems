@@ -646,18 +646,18 @@ Notes:
 // //return the result string in the flat list style
 // return result;
 // }
-// console.log(listAllBlackShoes(currentInventory));
+console.log(listAllBlackShoes(currentInventory));
 
-// let expected = "Brunello Cucinelli, tasselled black low-top lace-up, 1000\nGucci, black leather laced sneakers, 900\n";
+let expected = "Brunello Cucinelli, tasselled black low-top lace-up, 1000\nGucci, black leather laced sneakers, 900\n";
 
-// function assertEqual(actual, expected, testName){
-//   if (actual === expected){
-//     console.log('passed');
-//   }
-//   else{
-//     console.log(`failed [ ${testName} ] Expected ${expected}, but got ${actual}`);
-//   }
-// }
+function assertEqual(actual, expected, testName){
+  if (actual === expected){
+    console.log('passed');
+  }
+  else{
+    console.log(`failed [ ${testName} ] Expected ${expected}, but got ${actual}`);
+  }
+}
 
 
 
@@ -682,7 +682,7 @@ var currentInventory = [
   }
 ];
 
-//return an object with two properties, nameWords and targetWordIndex for shoe names from the inventory object that has the word 'lace' in them, in the nameWords property, we get each word from the name that has lace separately as an array, 
+// return an object with two properties, nameWords and targetWordIndex for shoe names from the inventory object that has the word 'lace' in them, in the nameWords property, we get each word from the name that has lace separately as an array, 
 // for the targetWordIndex property, we have the index of that value/element in the array
 
 
@@ -806,18 +806,18 @@ var currentInventory = [
 
 // sumDigits(-314);
 
-function flipPairs(input){
-    let newString = '';
-    for (let i=0; i<input.length; i+=2){
+// function flipPairs(input){
+//     let newString = '';
+//     for (let i=0; i<input.length; i+=2){
 
-      if (input[i+1] === undefined){
-        newString += input[i];
-        break;
-      }
-         newString += input[i+1] + input[i];
-    }
-    return newString;
-}
+//       if (input[i+1] === undefined){
+//         newString += input[i];
+//         break;
+//       }
+//          newString += input[i+1] + input[i];
+//     }
+//     return newString;
+// }
 
 var input = 'check out how interesting this problem is, it\'s insanely interesting!';
 var output = flipPairs(input);
@@ -869,92 +869,92 @@ function select(array, callback){
 
 
  
-// POD Day 7 - Self Recording - Check if Sorted 
-// Given an array of integers, check to see if the array is already sorted (return true or false)
+POD Day 7 - Self Recording - Check if Sorted 
+Given an array of integers, check to see if the array is already sorted (return true or false)
 
-// Focus on clearly explaining your solution
+Focus on clearly explaining your solution
 
-// Once you've solved it iteratively, try to solve it recursively or using functional programming
+Once you've solved it iteratively, try to solve it recursively or using functional programming
 
-// If you have time, write and walk through some test cases for your code.
+If you have time, write and walk through some test cases for your code.
 
-// What's the time complexity of your solution?
-
-
-// function checkSorted(array){
-
-//   for (let i=0; i<array.length; i++){
-
-//     if (array[i+1] === undefined){
-//       return true;
-//     }
-//     if (array[i+1]<array[i]){
-//       return false;
-//     }
-//   }
-// }
-// console.log(checkSorted([2,2,3,4,5,9,100]));
-// console.log(checkSorted([2,2,3,4,5,6,5])); // return false
-// the time complexity for this checkSortedFunction is O(n) which is linear. it iterates through the length of the array one time. so it is entirely dependent on the size of the array. 
-
-//i will use check if the array is sorted using the recursive approach
-// create a function called checkRecursiveSorted
-
-// const checkSortedRecursive = (array) => {
-//   if (array.length === 1){
-//     return true;
-//   }
-//     if (array[0]<=array[1]){
-//       array.shift();
-//       return checkSortedRecursive(array);
-//     }
-//       return false;
-
-// }
-
-// console.log(checkSortedRecursive([2,2,3,4,5,9,100])); //return true
-// console.log(checkSortedRecursive([2,2,3,4,5,6,5])); // return false
+What's the time complexity of your solution?
 
 
-// Given 2 arrays that may contain both numbers and strings return a new array with the numbers and/or strings that appear in both arrays duplicates are only counted once;
+function checkSorted(array){
 
-// Ex: 
+  for (let i=0; i<array.length; i++){
 
-// var array1 = [1,4,6,7,'ferret',12,12,99,2000,'dog','dog',99,1000];
-// var array2  = [15,9,9,'ferret',9,26,12,12,'dog'];
-// commonElements(array1, array2) -> [ 12, 'ferret', 'dog']
-// if there are no common numbers or strings, return []
+    if (array[i+1] === undefined){
+      return true;
+    }
+    if (array[i+1]<array[i]){
+      return false;
+    }
+  }
+}
+console.log(checkSorted([2,2,3,4,5,9,100]));
+console.log(checkSorted([2,2,3,4,5,6,5])); // return false
+the time complexity for this checkSortedFunction is O(n) which is linear. it iterates through the length of the array one time. so it is entirely dependent on the size of the array. 
 
-// Bonus: Modify commonElements to take in an array of arrays and only return elements that appear in every array
+i will use check if the array is sorted using the recursive approach
+create a function called checkRecursiveSorted
 
-// function commonElements(array1,array2){
+const checkSortedRecursive = (array) => {
+  if (array.length === 1){
+    return true;
+  }
+    if (array[0]<=array[1]){
+      array.shift();
+      return checkSortedRecursive(array);
+    }
+      return false;
+
+}
+
+console.log(checkSortedRecursive([2,2,3,4,5,9,100])); //return true
+console.log(checkSortedRecursive([2,2,3,4,5,6,5])); // return false
+
+
+Given 2 arrays that may contain both numbers and strings return a new array with the numbers and/or strings that appear in both arrays duplicates are only counted once;
+
+Ex: 
+
+var array1 = [1,4,6,7,'ferret',12,12,99,2000,'dog','dog',99,1000];
+var array2  = [15,9,9,'ferret',9,26,12,12,'dog'];
+commonElements(array1, array2) -> [ 12, 'ferret', 'dog']
+if there are no common numbers or strings, return []
+
+Bonus: Modify commonElements to take in an array of arrays and only return elements that appear in every array
+
+function commonElements(array1,array2){
    
-//    let common = array1.filter( e => array2.indexOf(e) !== -1);
-//    let filtered = common.reduce( (acc, curr) => {
-//       if (acc.indexOf(curr) === -1){
-//         acc.push(curr);
-//       }
-//       return acc;
-//    }, []);
-//   return filtered;
-// }
+   let common = array1.filter( e => array2.indexOf(e) !== -1);
+   let filtered = common.reduce( (acc, curr) => {
+      if (acc.indexOf(curr) === -1){
+        acc.push(curr);
+      }
+      return acc;
+   }, []);
+  return filtered;
+}
 
-//function commonElements(array1,array2){
-//  let result = array1.reduce( (acc, curr) => {
-//    array2.map( e => {
-//      if (e === curr){
-//        acc[e] = 0;
-//      }
-//    })
-//    return acc;
-//  }, {})
-//  return Object.keys(result);
-//}
-//
-//var array1 = [1,4,6,7,'ferret',12,12,99,2000,'dog','dog',99,1000];
-//var array2  = [15,9,9,'ferret',9,26,12,12,'dog'];
-//commonElements(array1, array2) //-> [ 12, 'ferret', 'dog']
-//// this is O(n2) since there are 2 iterations, it will be proportional to the square of the input array
-//
+function commonElements(array1,array2){
+ let result = array1.reduce( (acc, curr) => {
+   array2.map( e => {
+     if (e === curr){
+       acc[e] = 0;
+     }
+   })
+   return acc;
+ }, {})
+ return Object.keys(result);
+}
+
+var array1 = [1,4,6,7,'ferret',12,12,99,2000,'dog','dog',99,1000];
+var array2  = [15,9,9,'ferret',9,26,12,12,'dog'];
+commonElements(array1, array2) //-> [ 12, 'ferret', 'dog']
+// this is O(n2) since there are 2 iterations, it will be proportional to the square of the input array
+
 
 
