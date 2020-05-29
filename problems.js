@@ -663,51 +663,51 @@ function assertEqual(actual, expected, testName){
 
 // assertEqual(listAllBlackShoes(currentInventory), expected, 'return flat list of designer name, that has products with black shoes, and price' );
 
-var currentInventory = [
-  {
-    name: 'Brunello Cucinelli',
-    shoes: [
-      {name: 'tasselled black low-top lace-up', price: 1000},
-      {name: 'tasselled green low-top lace-up', price: 1100},
-      {name: 'plain beige suede moccasin', price: 950},
-      {name: 'plain olive suede moccasin', price: 1050}
-    ]
-  },
-  {
-    name: 'Gucci',
-    shoes: [
-      {name: 'red leather laced sneakers', price: 800},
-      {name: 'black leather laced sneakers', price: 900}
-    ]
-  }
-];
+// var currentInventory = [
+//   {
+//     name: 'Brunello Cucinelli',
+//     shoes: [
+//       {name: 'tasselled black low-top lace-up', price: 1000},
+//       {name: 'tasselled green low-top lace-up', price: 1100},
+//       {name: 'plain beige suede moccasin', price: 950},
+//       {name: 'plain olive suede moccasin', price: 1050}
+//     ]
+//   },
+//   {
+//     name: 'Gucci',
+//     shoes: [
+//       {name: 'red leather laced sneakers', price: 800},
+//       {name: 'black leather laced sneakers', price: 900}
+//     ]
+//   }
+// ];
 
 // return an object with two properties, nameWords and targetWordIndex for shoe names from the inventory object that has the word 'lace' in them, in the nameWords property, we get each word from the name that has lace separately as an array, 
 // for the targetWordIndex property, we have the index of that value/element in the array
 
 
-// function generateLaceDetails(inventory){
-// let result =[];
-// // iterate through the inventory object, access the shoes property
-// for (let i=0; i<inventory.length; i++){
-// //iterate through that array and access the name property 
-//   for (let k=0; k<inventory[i]['shoes'].length; k++){
-// //check if the name propery has substring of lace
-//   let shoesName = inventory[i]['shoes'][k]['name'];
-//     if (shoesName.includes('lace')){
-//     //if it does, we will turn the string into an array 
-//     //we will push the array nameWords, also set the target word index
-//     let nameWords = shoesName.split(" ");
-//     let targetWordIndex = nameWords.findIndex(el => el.includes("lace"));
-//     let subResult = {"nameWords": nameWords, "targetWordIndex": targetWordIndex};
-//     result.push(subResult);
-//     } 
+function generateLaceDetails(inventory){
+let result =[];
+// iterate through the inventory object, access the shoes property
+for (let i=0; i<inventory.length; i++){
+//iterate through that array and access the name property 
+  for (let k=0; k<inventory[i]['shoes'].length; k++){
+//check if the name propery has substring of lace
+  let shoesName = inventory[i]['shoes'][k]['name'];
+    if (shoesName.includes('lace')){
+    //if it does, we will turn the string into an array 
+    //we will push the array nameWords, also set the target word index
+    let nameWords = shoesName.split(" ");
+    let targetWordIndex = nameWords.findIndex(el => el.includes("lace"));
+    let subResult = {"nameWords": nameWords, "targetWordIndex": targetWordIndex};
+    result.push(subResult);
+    } 
 
-//   }
-// }
-// //return the result object
-// return result;
-// }
+  }
+}
+//return the result object
+return result;
+}
 
 // console.log(generateLaceDetails(currentInventory));
 
